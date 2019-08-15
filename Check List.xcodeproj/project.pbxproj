@@ -14,6 +14,7 @@
 		380FCEE9230556710042B62E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380FCEE7230556710042B62E /* LaunchScreen.storyboard */; };
 		382CC9F72305704D0077BC2A /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CC9F62305704D0077BC2A /* Test.storyboard */; };
 		77903E2D2305870F0026C7A1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77903E2C2305870F0026C7A1 /* Task.swift */; };
+		77903E2F2305898B0026C7A1 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77903E2E2305898B0026C7A1 /* TaskList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		380FCEEA230556710042B62E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		382CC9F62305704D0077BC2A /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		77903E2C2305870F0026C7A1 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		77903E2E2305898B0026C7A1 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 		380FCEDD2305566C0042B62E /* Check List */ = {
 			isa = PBXGroup;
 			children = (
-				77903E2C2305870F0026C7A1 /* Task.swift */,
+				77903E30230589FF0026C7A1 /* Model */,
 				380FCEDE2305566C0042B62E /* AppDelegate.swift */,
 				380FCEE02305566C0042B62E /* ViewController.swift */,
 				382CC9F8230570540077BC2A /* Storyboard */,
@@ -76,6 +78,15 @@
 				382CC9F62305704D0077BC2A /* Test.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		77903E30230589FF0026C7A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77903E2C2305870F0026C7A1 /* Task.swift */,
+				77903E2E2305898B0026C7A1 /* TaskList.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77903E2F2305898B0026C7A1 /* TaskList.swift in Sources */,
 				380FCEE12305566C0042B62E /* ViewController.swift in Sources */,
 				77903E2D2305870F0026C7A1 /* Task.swift in Sources */,
 				380FCEDF2305566C0042B62E /* AppDelegate.swift in Sources */,
@@ -299,7 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYQM88ABPG;
+				DEVELOPMENT_TEAM = YL752VZ4SN;
 				INFOPLIST_FILE = "Check List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -317,7 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYQM88ABPG;
+				DEVELOPMENT_TEAM = YL752VZ4SN;
 				INFOPLIST_FILE = "Check List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -11,7 +11,6 @@ import UIKit
 struct Task {
     
     let title: String
-    let taskList: [String]
-    let isDone: Bool
+    let taskList: [TaskList]
     
 }
