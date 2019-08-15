@@ -11,6 +11,7 @@ import UIKit
 class ListTableViewController: UITableViewController {
 
     var task: Task!
+    var dontSelectedTasks: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +35,20 @@ class ListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: зачеркивание текста
+        task.taskList[indexPath.row].isDone.toggle()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    
+    @IBAction func backButtonPressed() {
+        for item in task.taskList {
+            if !item.isDone {
+                dontSelectedTasks?.append(item.taskList)
+            }
+        }
+        if let dontSelectedTasks = dontSelectedTasks {
+            //TODO: вызываем алерт и выводим там этом массив
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

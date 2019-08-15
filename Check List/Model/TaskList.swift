@@ -11,5 +11,5 @@ import UIKit
 struct TaskList {
     
     let taskList: String
-    let isDone: Bool
+    var isDone: Bool
 }

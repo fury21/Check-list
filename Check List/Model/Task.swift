@@ -11,6 +11,6 @@ import UIKit
 struct Task {
     
     let title: String
-    let taskList: [TaskList]
+    var taskList: [TaskList]
     
 }
