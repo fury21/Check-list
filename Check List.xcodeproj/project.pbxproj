@@ -12,7 +12,8 @@
 		380FCEE42305566C0042B62E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380FCEE22305566C0042B62E /* Main.storyboard */; };
 		380FCEE6230556710042B62E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380FCEE5230556710042B62E /* Assets.xcassets */; };
 		380FCEE9230556710042B62E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380FCEE7230556710042B62E /* LaunchScreen.storyboard */; };
-		382CC9F72305704D0077BC2A /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CC9F62305704D0077BC2A /* Test.storyboard */; };
+		382CC9F72305704D0077BC2A /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CC9F62305704D0077BC2A /* Detail.storyboard */; };
+		9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F16AAC72305B280007FE9CB /* Add.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		380FCEE5230556710042B62E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		380FCEE8230556710042B62E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		380FCEEA230556710042B62E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		382CC9F62305704D0077BC2A /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		382CC9F62305704D0077BC2A /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		9F16AAC72305B280007FE9CB /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				380FCEE22305566C0042B62E /* Main.storyboard */,
-				382CC9F62305704D0077BC2A /* Test.storyboard */,
+				382CC9F62305704D0077BC2A /* Detail.storyboard */,
+				9F16AAC72305B280007FE9CB /* Add.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -135,7 +138,8 @@
 			files = (
 				380FCEE9230556710042B62E /* LaunchScreen.storyboard in Resources */,
 				380FCEE6230556710042B62E /* Assets.xcassets in Resources */,
-				382CC9F72305704D0077BC2A /* Test.storyboard in Resources */,
+				9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */,
+				382CC9F72305704D0077BC2A /* Detail.storyboard in Resources */,
 				380FCEE42305566C0042B62E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYQM88ABPG;
+				DEVELOPMENT_TEAM = UPE3S28QP6;
 				INFOPLIST_FILE = "Check List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -313,7 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYQM88ABPG;
+				DEVELOPMENT_TEAM = UPE3S28QP6;
 				INFOPLIST_FILE = "Check List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
