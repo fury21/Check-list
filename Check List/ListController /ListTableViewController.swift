@@ -39,6 +39,17 @@ class ListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            task.taskList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
+    
     @IBAction func backButtonPressed() {
         for item in task.taskList {
             if !item.isDone {
@@ -48,6 +59,10 @@ class ListTableViewController: UITableViewController {
         if let dontSelectedTasks = dontSelectedTasks {
             //TODO: вызываем алерт и выводим там этом массив
         }
+    }
+    
+    @IBAction func etidTable() {
+        tableView.isEditing.toggle()
     }
 
     /*
