@@ -9,3 +9,7 @@
 import Foundation
 
 var str: String!
+
+var number: Int!
+
+var kek: String!
