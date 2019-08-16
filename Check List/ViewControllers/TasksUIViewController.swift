@@ -21,8 +21,8 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let barBtnVar = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButton))
-//        navigationItem.setRightBarButton(barBtnVar, animated: true)
+        let barBtnVar = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButton))
+        navigationItem.setRightBarButton(barBtnVar, animated: true)
     }
 
     // MARK: - Table view data source
@@ -49,7 +49,7 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         cell.textLabel?.text = allLists[currentIndexPath.row].items[indexPath.row].taskName
-        cell.detailTextLabel?.text = "Количество: \(allLists[currentIndexPath.row].items[indexPath.row].taskName)"
+        cell.detailTextLabel?.text = "Количество: \(allLists[currentIndexPath.row].items[indexPath.row].tasksCount)"
         return cell
     }
     
