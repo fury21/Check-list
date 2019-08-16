@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum AlertType {
+    case edit
+    case add
+}
+
 class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
@@ -16,15 +21,21 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let barBtnVar = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButton))
-        navigationItem.setRightBarButton(barBtnVar, animated: true)
+//        let barBtnVar = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButton))
+//        navigationItem.setRightBarButton(barBtnVar, animated: true)
     }
 
     // MARK: - Table view data source
-    @objc func addButton() {
-        allLists[currentIndexPath.row].items.append(Tasks(taskName: "Новая задача", tasksCount: 0))
-        tableView.reloadData()
+    @IBAction func addButton() {
+        createAlertController(title: "Добавление",
+                              message: "Введите новую задачу",
+                              actionTitle: "Добавить",
+                              type: .add)
+    }
+    
+    // кнопка edit
+    @IBAction func etidTable() {
+        tableView.isEditing.toggle()
     }
     
      func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,7 +45,6 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allLists[currentIndexPath.row].items.count
     }
-
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskTableViewCell
@@ -51,8 +61,12 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func importantAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Important") { (_, action, completion) in
-            completion(true)
+        let action = UIContextualAction(style: .normal, title: "Editing") { (_, action, completion) in
+            self.createAlertController(title: "Редактирование",
+                                       message: "Редактирование задачи",
+                                       actionTitle: "Сохранить",
+                                       type: .edit,
+                                       index: indexPath.row)
         }
         action.image = UIImage(named: "Alarm")
         action.backgroundColor = .gray
@@ -72,6 +86,53 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         return action
     }
     
+    private func createAlertController(title: String, message: String,
+                                       actionTitle: String, type: AlertType, index: Int = 0) {
+        
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        // Добавляю первое текстовое поле
+        alert.addTextField { (textField) in
+            switch type {
+            case .add:
+                textField.placeholder = "enter something..."
+            case .edit:
+                textField.text = allLists[self.currentIndexPath.row].items[index].taskName
+            }
+        }
+        
+        // Добавляю второе текстовое поле
+        alert.addTextField { (textField) in
+            switch type {
+            case .add:
+                textField.placeholder = "enter something..."
+            case .edit:
+                textField.text = String(allLists[self.currentIndexPath.row].items[index].tasksCount)
+            }
+        }
+        
+        let action = UIAlertAction(title: actionTitle, style: .default) { (action) in
+            guard let taskNameTextField =  alert.textFields?.first?.text,
+                !taskNameTextField.isEmpty, let taskCountTextField = alert.textFields?[1].text,
+                let taskCount = Int(taskCountTextField) else {return}
+            
+            let newTaskList = Tasks(taskName: taskNameTextField, tasksCount: taskCount)
+            switch type {
+            case .add:
+                allLists[self.currentIndexPath.row].items.append(newTaskList)
+            case .edit:
+                allLists[self.currentIndexPath.row].items[index] = newTaskList
+            }
+            self.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        alert.addAction(action)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
