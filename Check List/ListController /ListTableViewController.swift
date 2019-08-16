@@ -42,10 +42,6 @@ class ListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
     // Удаление ячейки
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -54,13 +50,20 @@ class ListTableViewController: UITableViewController {
         }
     }
     
-    // Запуск при нажатии на копку редактирования
-    @IBAction func etidTable() {
-        tableView.isEditing.toggle()
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let currentTask = task.taskList.remove(at: sourceIndexPath.row)
+        task.taskList.insert(currentTask, at: destinationIndexPath.row)
+        tableView.reloadData()
     }
     
+    // кнопка add
     @IBAction func addButtonPressed() {
-        
+        createAlertController()
+    }
+    
+    // кнопка edit
+    @IBAction func etidTable() {
+        tableView.isEditing.toggle()
     }
     
     fileprivate func createAlertController() {
@@ -71,12 +74,13 @@ class ListTableViewController: UITableViewController {
             textField.placeholder = "enter something..."
         }
         let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
-            if let text = alert.textFields?[0].text {
-                let newTaskList = TaskList(taskList: text, isDone: false)
-                self.task.taskList.append(newTaskList)
-            }
+            guard let text =  alert.textFields?.first?.text, !text.isEmpty else  {return}
+            let newTaskList = TaskList(taskList: text, isDone: false)
+            self.task.taskList.append(newTaskList)
+            self.tableView.reloadData()
         }
         alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
 }
