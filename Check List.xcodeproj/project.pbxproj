@@ -15,6 +15,7 @@
 		382CC9F72305704D0077BC2A /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CC9F62305704D0077BC2A /* List.storyboard */; };
 		77271E0F2305E9C100E328CD /* Extension String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77271E0E2305E9C100E328CD /* Extension String.swift */; };
 		77271E112305EA5E00E328CD /* Extension UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77271E102305EA5E00E328CD /* Extension UIViewController.swift */; };
+
 		77903E2D2305870F0026C7A1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77903E2C2305870F0026C7A1 /* Task.swift */; };
 		77903E2F2305898B0026C7A1 /* AllLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77903E2E2305898B0026C7A1 /* AllLists.swift */; };
 		F6F6CB4D230590D3003FB8E9 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F6CB4C230590D3003FB8E9 /* ListTableViewController.swift */; };
@@ -29,8 +30,10 @@
 		380FCEE8230556710042B62E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		380FCEEA230556710042B62E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		382CC9F62305704D0077BC2A /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+
 		77271E0E2305E9C100E328CD /* Extension String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension String.swift"; sourceTree = "<group>"; };
 		77271E102305EA5E00E328CD /* Extension UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIViewController.swift"; sourceTree = "<group>"; };
+
 		77903E2C2305870F0026C7A1 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		77903E2E2305898B0026C7A1 /* AllLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLists.swift; sourceTree = "<group>"; };
 		F6F6CB4C230590D3003FB8E9 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		380FCEDD2305566C0042B62E /* Check List */ = {
 			isa = PBXGroup;
 			children = (
+				382CC9FB2305DE540077BC2A /* test */,
 				77903E30230589FF0026C7A1 /* Model */,
 				380FCEDE2305566C0042B62E /* AppDelegate.swift */,
 				380FCEE02305566C0042B62E /* ViewController.swift */,
@@ -87,13 +91,27 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		382CC9FB2305DE540077BC2A /* test */ = {
+			isa = PBXGroup;
+			children = (
+				382CC9FC2305DE600077BC2A /* Lists.storyboard */,
+				382CCA0C2305E0D50077BC2A /* ListsTableViewController.swift */,
+				382CCA0E2305E0DD0077BC2A /* TasksTableViewController.swift */,
+				382CCA082305E0710077BC2A /* ListTableViewCell.swift */,
+				382CCA0A2305E07C0077BC2A /* TaskTableViewCell.swift */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		77903E30230589FF0026C7A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				77903E2C2305870F0026C7A1 /* Task.swift */,
+
 				77903E2E2305898B0026C7A1 /* AllLists.swift */,
 				77271E0E2305E9C100E328CD /* Extension String.swift */,
 				77271E102305EA5E00E328CD /* Extension UIViewController.swift */,
+
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				380FCEE9230556710042B62E /* LaunchScreen.storyboard in Resources */,
+				382CC9FD2305DE600077BC2A /* Lists.storyboard in Resources */,
 				380FCEE6230556710042B62E /* Assets.xcassets in Resources */,
 				382CC9F72305704D0077BC2A /* List.storyboard in Resources */,
 				380FCEE42305566C0042B62E /* Main.storyboard in Resources */,
@@ -180,11 +199,18 @@
 			files = (
 				77903E2F2305898B0026C7A1 /* AllLists.swift in Sources */,
 				380FCEE12305566C0042B62E /* ViewController.swift in Sources */,
+
 				77271E112305EA5E00E328CD /* Extension UIViewController.swift in Sources */,
+
 				77903E2D2305870F0026C7A1 /* Task.swift in Sources */,
 				F6F6CB4D230590D3003FB8E9 /* ListTableViewController.swift in Sources */,
+				382CCA092305E0710077BC2A /* ListTableViewCell.swift in Sources */,
+				382CCA0F2305E0DD0077BC2A /* TasksTableViewController.swift in Sources */,
+				382CCA0D2305E0D50077BC2A /* ListsTableViewController.swift in Sources */,
 				380FCEDF2305566C0042B62E /* AppDelegate.swift in Sources */,
+
 				77271E0F2305E9C100E328CD /* Extension String.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YL752VZ4SN;
+				DEVELOPMENT_TEAM = FYQM88ABPG;
 				INFOPLIST_FILE = "Check List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -349,7 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YL752VZ4SN;
+				DEVELOPMENT_TEAM = FYQM88ABPG;
 				INFOPLIST_FILE = "Check List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
