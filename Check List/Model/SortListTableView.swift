@@ -41,3 +41,20 @@ class Tasks {
 }
 
 var allLists = [AllLists]()
+
+
+//let userDefaults = UserDefaults.standard
+//userDefaults.set(email, forKey: "login")
+//
+//
+////-------
+//let userDefaultsGet = UserDefaults.standard
+//
+//guard userDefaultsGet.object(forKey: "login") as? String != nil else {
+//    showAlert(title: "ОШИБКА!", message: "Вы еще не зарегестрированы")
+//    return
+//}
+//
+//
+//let email = userDefaultsGet.object(forKey: "login") as! String
+//let password = userDefaultsGet.object(forKey: "password") as! String
