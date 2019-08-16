@@ -9,6 +9,7 @@
 import UIKit
 
 class ListsUIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBAction func newListButton(_ sender: Any) {
         allLists.append(AllLists(listName: "Новый список", items: []))
         tableView.reloadData()
@@ -35,7 +36,7 @@ class ListsUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
         
         cell.listLabel.text = allLists[indexPath.row].listName
-        
+        // cell.listSublabel = ???
         return cell
     }
     
