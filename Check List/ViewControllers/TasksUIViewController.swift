@@ -47,9 +47,9 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskTableViewCell
-        cell.taskLabel.text = allLists[currentIndexPath.row].items[indexPath.row].taskName
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+        cell.textLabel?.text = allLists[currentIndexPath.row].items[indexPath.row].taskName
+        cell.detailTextLabel?.text = "Количество: \(allLists[currentIndexPath.row].items[indexPath.row].taskName)"
         return cell
     }
     
