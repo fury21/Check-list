@@ -11,10 +11,13 @@ import UIKit
 class ListTableViewController: UITableViewController {
 
     // По тапу на ячейку передаем наш список сюда
-    fileprivate var task: Task!
+    private var task: Task!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = task.title
+        
     }
 
     // MARK: - Table view data source
@@ -54,6 +57,26 @@ class ListTableViewController: UITableViewController {
     // Запуск при нажатии на копку редактирования
     @IBAction func etidTable() {
         tableView.isEditing.toggle()
+    }
+    
+    @IBAction func addButtonPressed() {
+        
+    }
+    
+    fileprivate func createAlertController() {
+        let alert = UIAlertController(title: "Добавление",
+                                      message: "Введите сюда то, что хотите добавить в списов",
+                                      preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "enter something..."
+        }
+        let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
+            if let text = alert.textFields?[0].text {
+                let newTaskList = TaskList(taskList: text, isDone: false)
+                self.task.taskList.append(newTaskList)
+            }
+        }
+        alert.addAction(action)
     }
     
 }
