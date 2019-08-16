@@ -19,6 +19,8 @@
 		77903E2D2305870F0026C7A1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77903E2C2305870F0026C7A1 /* Task.swift */; };
 		77903E2F2305898B0026C7A1 /* AllLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77903E2E2305898B0026C7A1 /* AllLists.swift */; };
 		F6F6CB4D230590D3003FB8E9 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F6CB4C230590D3003FB8E9 /* ListTableViewController.swift */; };
+		382CC9F72305704D0077BC2A /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CC9F62305704D0077BC2A /* Detail.storyboard */; };
+		9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F16AAC72305B280007FE9CB /* Add.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		77903E2C2305870F0026C7A1 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		77903E2E2305898B0026C7A1 /* AllLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLists.swift; sourceTree = "<group>"; };
 		F6F6CB4C230590D3003FB8E9 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		382CC9F62305704D0077BC2A /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		9F16AAC72305B280007FE9CB /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 			children = (
 				380FCEE22305566C0042B62E /* Main.storyboard */,
 				382CC9F62305704D0077BC2A /* List.storyboard */,
+				382CC9F62305704D0077BC2A /* Detail.storyboard */,
+				9F16AAC72305B280007FE9CB /* Add.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 				382CC9FD2305DE600077BC2A /* Lists.storyboard in Resources */,
 				380FCEE6230556710042B62E /* Assets.xcassets in Resources */,
 				382CC9F72305704D0077BC2A /* List.storyboard in Resources */,
+				9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */,
+				382CC9F72305704D0077BC2A /* Detail.storyboard in Resources */,
 				380FCEE42305566C0042B62E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYQM88ABPG;
+				DEVELOPMENT_TEAM = UPE3S28QP6;
 				INFOPLIST_FILE = "Check List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -375,7 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYQM88ABPG;
+				DEVELOPMENT_TEAM = UPE3S28QP6;
 				INFOPLIST_FILE = "Check List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
