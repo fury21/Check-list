@@ -11,10 +11,13 @@ import UIKit
 class ListTableViewController: UITableViewController {
 
     // По тапу на ячейку передаем наш список сюда
-    fileprivate var task: Task!
+    private var task: Task!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = task.title
+        
     }
 
     // MARK: - Table view data source
@@ -39,10 +42,6 @@ class ListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
     // Удаление ячейки
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -51,9 +50,37 @@ class ListTableViewController: UITableViewController {
         }
     }
     
-    // Запуск при нажатии на копку редактирования
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let currentTask = task.taskList.remove(at: sourceIndexPath.row)
+        task.taskList.insert(currentTask, at: destinationIndexPath.row)
+        tableView.reloadData()
+    }
+    
+    // кнопка add
+    @IBAction func addButtonPressed() {
+        createAlertController()
+    }
+    
+    // кнопка edit
     @IBAction func etidTable() {
         tableView.isEditing.toggle()
+    }
+    
+    fileprivate func createAlertController() {
+        let alert = UIAlertController(title: "Добавление",
+                                      message: "Введите сюда то, что хотите добавить в списов",
+                                      preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "enter something..."
+        }
+        let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
+            guard let text =  alert.textFields?.first?.text, !text.isEmpty else  {return}
+            let newTaskList = TaskList(taskList: text, isDone: false)
+            self.task.taskList.append(newTaskList)
+            self.tableView.reloadData()
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
 }
