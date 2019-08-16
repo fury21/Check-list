@@ -19,11 +19,9 @@
 		382CCA212306C1CC0077BC2A /* SortListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA1C2306C1CC0077BC2A /* SortListTableView.swift */; };
 		382CCA222306C1CC0077BC2A /* Extension String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA1D2306C1CC0077BC2A /* Extension String.swift */; };
 		382CCA232306C1CC0077BC2A /* Extension UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA1E2306C1CC0077BC2A /* Extension UIViewController.swift */; };
-		382CCA242306C1CC0077BC2A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA1F2306C1CC0077BC2A /* Task.swift */; };
 		382CCA352306C6EE0077BC2A /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA342306C6EE0077BC2A /* ListTableViewController.swift */; };
 		382CCA382306C8980077BC2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CCA362306C8980077BC2A /* Main.storyboard */; };
 		382CCA3A2306C9930077BC2A /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CCA392306C9920077BC2A /* Detail.storyboard */; };
-		382CCA3C2306C9B20077BC2A /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CCA3B2306C9B20077BC2A /* List.storyboard */; };
 		9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F16AAC72305B280007FE9CB /* Add.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -42,11 +40,9 @@
 		382CCA1C2306C1CC0077BC2A /* SortListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortListTableView.swift; sourceTree = "<group>"; };
 		382CCA1D2306C1CC0077BC2A /* Extension String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension String.swift"; sourceTree = "<group>"; };
 		382CCA1E2306C1CC0077BC2A /* Extension UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension UIViewController.swift"; sourceTree = "<group>"; };
-		382CCA1F2306C1CC0077BC2A /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		382CCA342306C6EE0077BC2A /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		382CCA372306C8980077BC2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		382CCA392306C9920077BC2A /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
-		382CCA3B2306C9B20077BC2A /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		9F16AAC72305B280007FE9CB /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +94,6 @@
 				382CCA392306C9920077BC2A /* Detail.storyboard */,
 				382CCA362306C8980077BC2A /* Main.storyboard */,
 				9F16AAC72305B280007FE9CB /* Add.storyboard */,
-				382CCA3B2306C9B20077BC2A /* List.storyboard */,
 				380FCEE7230556710042B62E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -121,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				382CCA1C2306C1CC0077BC2A /* SortListTableView.swift */,
-				382CCA1F2306C1CC0077BC2A /* Task.swift */,
 				382CCA1D2306C1CC0077BC2A /* Extension String.swift */,
 				382CCA1E2306C1CC0077BC2A /* Extension UIViewController.swift */,
 			);
@@ -196,7 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				382CCA382306C8980077BC2A /* Main.storyboard in Resources */,
-				382CCA3C2306C9B20077BC2A /* List.storyboard in Resources */,
 				380FCEE9230556710042B62E /* LaunchScreen.storyboard in Resources */,
 				380FCEE6230556710042B62E /* Assets.xcassets in Resources */,
 				9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */,
@@ -216,7 +209,6 @@
 				382CCA232306C1CC0077BC2A /* Extension UIViewController.swift in Sources */,
 				382CCA1A2306C18B0077BC2A /* TaskTableViewCell.swift in Sources */,
 				382CCA212306C1CC0077BC2A /* SortListTableView.swift in Sources */,
-				382CCA242306C1CC0077BC2A /* Task.swift in Sources */,
 				382CCA182306C18B0077BC2A /* ListTableViewCell.swift in Sources */,
 				382CCA192306C18B0077BC2A /* TasksUIViewController.swift in Sources */,
 				382CCA222306C1CC0077BC2A /* Extension String.swift in Sources */,

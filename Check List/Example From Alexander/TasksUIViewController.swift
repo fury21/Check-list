@@ -23,7 +23,6 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     // MARK: - Table view data source
     @objc func addButton() {
-        
         allLists[currentIndexPath.row].items.append(Tasks(taskName: "Новая задача", tasksCount: 0))
         tableView.reloadData()
     }
@@ -42,6 +41,35 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.taskLabel.text = allLists[currentIndexPath.row].items[indexPath.row].taskName
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let important = importantAction(at: indexPath)
+        let delete = deleteAction(at: indexPath)
+        
+        return UISwipeActionsConfiguration(actions: [delete, important])
+    }
+    
+    func importantAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "Important") { (_, action, completion) in
+            completion(true)
+        }
+        action.image = UIImage(named: "Alarm")
+        action.backgroundColor = .gray
+        
+        return action
+    }
+    
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive , title: "Delete") { (_, action, completion) in
+            allLists[self.currentIndexPath.row].items.remove(at: indexPath.row)
+            self.tableView.reloadData()
+            completion(true)
+        }
+        action.image = UIImage(named: "Trash")
+        action.backgroundColor = .red
+        
+        return action
     }
     
 

@@ -5,6 +5,7 @@
 //  Created by Роман Важник on 15/08/2019.
 //  Copyright © 2019 Александр Б. All rights reserved.
 //
+
 import UIKit
 
 class ListTableViewController: UITableViewController {
@@ -20,6 +21,7 @@ class ListTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -66,14 +68,14 @@ class ListTableViewController: UITableViewController {
     
     fileprivate func createAlertController() {
         let alert = UIAlertController(title: "Добавление",
-                                      message: "Введите сюда то, что хотите добавить в списов",
+                                      message: "Введите сюда то, что хотите добавить в список",
                                       preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "enter something..."
         }
         let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
             guard let text =  alert.textFields?.first?.text, !text.isEmpty else  {return}
-            let newTaskList = Task(taskName: text, isTaskDone: false, tasksCount: 3)
+            let newTaskList = Tasks(taskName: text, tasksCount: 0)
             self.task.items.append(newTaskList)
             self.tableView.reloadData()
         }
