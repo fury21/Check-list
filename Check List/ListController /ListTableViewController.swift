@@ -11,12 +11,12 @@ import UIKit
 class ListTableViewController: UITableViewController {
 
     // По тапу на ячейку передаем наш список сюда
-    private var task: Task!
+    private var task: AllLists!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = task.title
+        title = task.listName
         
     }
 
@@ -27,32 +27,32 @@ class ListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return task.taskList.count
+        return task.items.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
-        cell.textLabel?.text = task.taskList[indexPath.row].taskList
+        cell.textLabel?.text = task.items[indexPath.row].taskName
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: зачеркивание текста
-        task.taskList[indexPath.row].isDone.toggle()
+        task.items[indexPath.row].isTaskDone.toggle()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // Удаление ячейки
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            task.taskList.remove(at: indexPath.row)
+            task.items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .left)
         }
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let currentTask = task.taskList.remove(at: sourceIndexPath.row)
-        task.taskList.insert(currentTask, at: destinationIndexPath.row)
+        let currentTask = task.items.remove(at: sourceIndexPath.row)
+        task.items.insert(currentTask, at: destinationIndexPath.row)
         tableView.reloadData()
     }
     
@@ -75,12 +75,13 @@ class ListTableViewController: UITableViewController {
         }
         let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
             guard let text =  alert.textFields?.first?.text, !text.isEmpty else  {return}
-            let newTaskList = TaskList(taskList: text, isDone: false)
-            self.task.taskList.append(newTaskList)
+            let newTaskList = Task(taskName: text, isTaskDone: false, tasksCount: 3)
+            self.task.items.append(newTaskList)
             self.tableView.reloadData()
         }
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
     
 }
