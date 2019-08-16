@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListsUIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func newListButton(_ sender: Any) {
         allLists.append(AllLists(listName: "Новый список", items: []))
         tableView.reloadData()
@@ -42,7 +42,7 @@ class ListsTableViewController: UIViewController, UITableViewDelegate, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //        if segue.identifier == "toDetailSegue" {
         if let indexPath = tableView.indexPathForSelectedRow {
-            let taskVC = segue.destination as! TasksTableViewController
+            let taskVC = segue.destination as! TasksUIViewController
             
             taskVC.tasks = allLists[indexPath.row].items
             taskVC.currentIndexPath = indexPath

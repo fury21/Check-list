@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TasksTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
     var tasks: [Tasks]!

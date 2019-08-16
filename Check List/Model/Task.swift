@@ -8,16 +8,3 @@
 
 import UIKit
 
-class Task {
-    
-    let taskName: String
-    var tasksCount: Int
-    
-    var isTaskDone = false
-    
-    init(taskName: String, isTaskDone: Bool, tasksCount: Int) {
-        self.taskName = taskName
-        self.isTaskDone = isTaskDone
-        self.tasksCount = tasksCount
-    }
-}
