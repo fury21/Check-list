@@ -20,11 +20,18 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
     var tasks: [Tasks]!
     var currentIndexPath: IndexPath!
     
+    var refresh = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let barBtnVar = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButton))
         navigationItem.setRightBarButton(barBtnVar, animated: true)
+        
+        refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        tableView.addSubview(refresh)
+        
     }
     
     // MARK: - Table view data source
@@ -115,6 +122,19 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         return action
     }
     
+    //Обновление таблицы, сброс значений
+    @objc private func handleRefresh() {
+        refresh.endRefreshing()
+        for item in allLists[currentIndexPath.row].items {
+            if item.isTaskDone {
+                item.isTaskDone.toggle()
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.8) {
+            self.tableView.reloadData()
+        }
+    }
+    
     private func createAlertController(title: String, message: String,
                                        actionTitle: String, type: AlertType, index: Int = 0) {
         
@@ -126,7 +146,7 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         alert.addTextField { (textField) in
             switch type {
             case .add:
-                textField.placeholder = "enter something..."
+                textField.placeholder = "Укажите название"
             case .edit:
                 textField.text = allLists[self.currentIndexPath.row].items[index].taskName
             }
@@ -136,7 +156,7 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         alert.addTextField { (textField) in
             switch type {
             case .add:
-                textField.placeholder = "enter something..."
+                textField.placeholder = "Укажите количество"
             case .edit:
                 textField.text = String(allLists[self.currentIndexPath.row].items[index].tasksCount)
             }
@@ -161,6 +181,7 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         
+        alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
         alert.addAction(action)
         alert.addAction(cancelAction)
