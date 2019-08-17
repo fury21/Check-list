@@ -20,9 +20,8 @@
 		38FDBA7E230705E300EEAB75 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FDBA7D230705E300EEAB75 /* Tasks.swift */; };
 		38FDBA802307066B00EEAB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FDBA7F2307066B00EEAB75 /* Main.storyboard */; };
 		38FDBA82230707B500EEAB75 /* Tasks (Depricated).swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FDBA81230707B500EEAB75 /* Tasks (Depricated).swift */; };
-		38FDBA8723089E5100EEAB75 /* TasksUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FDBA8623089E5100EEAB75 /* TasksUIViewController.swift */; };
+		38FDBA892308A12C00EEAB75 /* TasksUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FDBA882308A12C00EEAB75 /* TasksUIViewController.swift */; };
 		77CFA4C22308372F00C18DD8 /* Extension UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CFA4C12308372F00C18DD8 /* Extension UIViewController.swift */; };
-		9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F16AAC72305B280007FE9CB /* Add.storyboard */; };
 		F69F943B23083B9A000CC735 /* DefaultAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F943A23083B9A000CC735 /* DefaultAlert.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +41,8 @@
 		38FDBA7D230705E300EEAB75 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		38FDBA7F2307066B00EEAB75 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		38FDBA81230707B500EEAB75 /* Tasks (Depricated).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks (Depricated).swift"; sourceTree = "<group>"; };
-		38FDBA8623089E5100EEAB75 /* TasksUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TasksUIViewController.swift; path = ../../../../../../../../../Downloads/TasksUIViewController.swift; sourceTree = "<group>"; };
+		38FDBA882308A12C00EEAB75 /* TasksUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksUIViewController.swift; sourceTree = "<group>"; };
 		77CFA4C12308372F00C18DD8 /* Extension UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIViewController.swift"; sourceTree = "<group>"; };
-		9F16AAC72305B280007FE9CB /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		F69F943A23083B9A000CC735 /* DefaultAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +92,6 @@
 			children = (
 				38FDBA7F2307066B00EEAB75 /* Main.storyboard */,
 				382CCA392306C9920077BC2A /* Tasks.storyboard */,
-				9F16AAC72305B280007FE9CB /* Add.storyboard */,
 				380FCEE7230556710042B62E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -117,7 +114,7 @@
 			children = (
 				38FDBA8323070AE900EEAB75 /* Depricated */,
 				382CCA112306C18B0077BC2A /* ListsUIViewController.swift */,
-				38FDBA8623089E5100EEAB75 /* TasksUIViewController.swift */,
+				38FDBA882308A12C00EEAB75 /* TasksUIViewController.swift */,
 				382CCA132306C18B0077BC2A /* ListTableViewCell.swift */,
 				382CCA152306C18B0077BC2A /* TaskTableViewCell.swift */,
 			);
@@ -194,7 +191,6 @@
 				38FDBA802307066B00EEAB75 /* Main.storyboard in Resources */,
 				380FCEE9230556710042B62E /* LaunchScreen.storyboard in Resources */,
 				380FCEE6230556710042B62E /* Assets.xcassets in Resources */,
-				9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */,
 				382CCA3A2306C9930077BC2A /* Tasks.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,9 +205,9 @@
 				F69F943B23083B9A000CC735 /* DefaultAlert.swift in Sources */,
 				382CCA1A2306C18B0077BC2A /* TaskTableViewCell.swift in Sources */,
 				38FDBA7E230705E300EEAB75 /* Tasks.swift in Sources */,
+				38FDBA892308A12C00EEAB75 /* TasksUIViewController.swift in Sources */,
 				382CCA182306C18B0077BC2A /* ListTableViewCell.swift in Sources */,
 				38FDBA7C230705C100EEAB75 /* AllLists.swift in Sources */,
-				38FDBA8723089E5100EEAB75 /* TasksUIViewController.swift in Sources */,
 				77CFA4C22308372F00C18DD8 /* Extension UIViewController.swift in Sources */,
 				38FDBA82230707B500EEAB75 /* Tasks (Depricated).swift in Sources */,
 				382CCA222306C1CC0077BC2A /* Extension String.swift in Sources */,
