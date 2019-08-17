@@ -15,13 +15,13 @@
 		382CCA192306C18B0077BC2A /* TasksUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA142306C18B0077BC2A /* TasksUIViewController.swift */; };
 		382CCA1A2306C18B0077BC2A /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA152306C18B0077BC2A /* TaskTableViewCell.swift */; };
 		382CCA222306C1CC0077BC2A /* Extension String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA1D2306C1CC0077BC2A /* Extension String.swift */; };
-		382CCA232306C1CC0077BC2A /* Extension UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA1E2306C1CC0077BC2A /* Extension UIViewController.swift */; };
 		382CCA352306C6EE0077BC2A /* List (Depricated).swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CCA342306C6EE0077BC2A /* List (Depricated).swift */; };
 		382CCA3A2306C9930077BC2A /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CCA392306C9920077BC2A /* Tasks.storyboard */; };
 		38FDBA7C230705C100EEAB75 /* AllLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FDBA7B230705C100EEAB75 /* AllLists.swift */; };
 		38FDBA7E230705E300EEAB75 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FDBA7D230705E300EEAB75 /* Tasks.swift */; };
 		38FDBA802307066B00EEAB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FDBA7F2307066B00EEAB75 /* Main.storyboard */; };
 		38FDBA82230707B500EEAB75 /* Tasks (Depricated).swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FDBA81230707B500EEAB75 /* Tasks (Depricated).swift */; };
+		77CFA4C22308372F00C18DD8 /* Extension UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CFA4C12308372F00C18DD8 /* Extension UIViewController.swift */; };
 		9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F16AAC72305B280007FE9CB /* Add.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -36,13 +36,13 @@
 		382CCA142306C18B0077BC2A /* TasksUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksUIViewController.swift; sourceTree = "<group>"; };
 		382CCA152306C18B0077BC2A /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		382CCA1D2306C1CC0077BC2A /* Extension String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension String.swift"; sourceTree = "<group>"; };
-		382CCA1E2306C1CC0077BC2A /* Extension UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension UIViewController.swift"; sourceTree = "<group>"; };
 		382CCA342306C6EE0077BC2A /* List (Depricated).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "List (Depricated).swift"; sourceTree = "<group>"; };
 		382CCA392306C9920077BC2A /* Tasks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tasks.storyboard; sourceTree = "<group>"; };
 		38FDBA7B230705C100EEAB75 /* AllLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLists.swift; sourceTree = "<group>"; };
 		38FDBA7D230705E300EEAB75 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		38FDBA7F2307066B00EEAB75 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		38FDBA81230707B500EEAB75 /* Tasks (Depricated).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks (Depricated).swift"; sourceTree = "<group>"; };
+		77CFA4C12308372F00C18DD8 /* Extension UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIViewController.swift"; sourceTree = "<group>"; };
 		9F16AAC72305B280007FE9CB /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 				38FDBA7B230705C100EEAB75 /* AllLists.swift */,
 				38FDBA7D230705E300EEAB75 /* Tasks.swift */,
 				382CCA1D2306C1CC0077BC2A /* Extension String.swift */,
-				382CCA1E2306C1CC0077BC2A /* Extension UIViewController.swift */,
+				77CFA4C12308372F00C18DD8 /* Extension UIViewController.swift */,
 			);
 			name = Model;
 			path = "Check List/Model";
@@ -203,11 +203,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				382CCA232306C1CC0077BC2A /* Extension UIViewController.swift in Sources */,
 				382CCA1A2306C18B0077BC2A /* TaskTableViewCell.swift in Sources */,
 				38FDBA7E230705E300EEAB75 /* Tasks.swift in Sources */,
 				382CCA182306C18B0077BC2A /* ListTableViewCell.swift in Sources */,
 				38FDBA7C230705C100EEAB75 /* AllLists.swift in Sources */,
+				77CFA4C22308372F00C18DD8 /* Extension UIViewController.swift in Sources */,
 				38FDBA82230707B500EEAB75 /* Tasks (Depricated).swift in Sources */,
 				382CCA192306C18B0077BC2A /* TasksUIViewController.swift in Sources */,
 				382CCA222306C1CC0077BC2A /* Extension String.swift in Sources */,
