@@ -143,25 +143,31 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         let action = UIAlertAction(title: actionTitle, style: .default) { (action) in
-            guard let taskNameTextField =  alert.textFields?.first?.text,
+            if let taskNameTextField =  alert.textFields?.first?.text,
                 !taskNameTextField.isEmpty, let taskCountTextField = alert.textFields?[1].text,
-                let taskCount = Int(taskCountTextField) else {return}
-            
-            let newTaskList = Tasks(taskName: taskNameTextField, tasksCount: taskCount)
-            switch type {
-            case .add:
-                allLists[self.currentIndexPath.row].items.append(newTaskList)
-            case .edit:
-                allLists[self.currentIndexPath.row].items[index] = newTaskList
+                let taskCount = Int(taskCountTextField) {
+                
+                let newTaskList = Tasks(taskName: taskNameTextField, tasksCount: taskCount)
+                switch type {
+                case .add:
+                    allLists[self.currentIndexPath.row].items.append(newTaskList)
+                case .edit:
+                    allLists[self.currentIndexPath.row].items[index] = newTaskList
+                }
+                self.tableView.reloadData()
+            } else {
+                let alert = DefaultAlert.createDefaultAlert(title: "Ошибка", message: "Некорректный ввод")
+                self.present(alert, animated: true, completion: nil)
             }
-            self.tableView.reloadData()
         }
+        
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
         alert.addAction(action)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
         
     }
+
     
     /*
      // Override to support conditional editing of the table view.

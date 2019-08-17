@@ -22,6 +22,7 @@
 		38FDBA802307066B00EEAB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FDBA7F2307066B00EEAB75 /* Main.storyboard */; };
 		38FDBA82230707B500EEAB75 /* Tasks (Depricated).swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FDBA81230707B500EEAB75 /* Tasks (Depricated).swift */; };
 		9F16AAC82305B280007FE9CB /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F16AAC72305B280007FE9CB /* Add.storyboard */; };
+		F69F943B23083B9A000CC735 /* DefaultAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F943A23083B9A000CC735 /* DefaultAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		38FDBA7F2307066B00EEAB75 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		38FDBA81230707B500EEAB75 /* Tasks (Depricated).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks (Depricated).swift"; sourceTree = "<group>"; };
 		9F16AAC72305B280007FE9CB /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
+		F69F943A23083B9A000CC735 /* DefaultAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				380FCEDE2305566C0042B62E /* AppDelegate.swift */,
 				380FCEE5230556710042B62E /* Assets.xcassets */,
 				380FCEEA230556710042B62E /* Info.plist */,
+				F69F943A23083B9A000CC735 /* DefaultAlert.swift */,
 			);
 			path = "Check List";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F69F943B23083B9A000CC735 /* DefaultAlert.swift in Sources */,
 				382CCA1A2306C18B0077BC2A /* TaskTableViewCell.swift in Sources */,
 				38FDBA7E230705E300EEAB75 /* Tasks.swift in Sources */,
 				382CCA182306C18B0077BC2A /* ListTableViewCell.swift in Sources */,
