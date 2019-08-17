@@ -20,7 +20,6 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
     var tasks: [Tasks]!
     var currentIndexPath: IndexPath!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let barBtnVar = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButton))
@@ -62,8 +61,11 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         cell.detailTextLabel?.text = "Количество: \(allLists[currentIndexPath.row].items[indexPath.row].tasksCount)"
         
+        
         return cell
     }
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
