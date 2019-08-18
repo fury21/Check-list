@@ -64,7 +64,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let indexPath = tableView.indexPathForSelectedRow {
         let taskVC = segue.destination as! TasksUIViewController
         
-        taskVC.tasks = allLists[indexPath.row].items
+        
         taskVC.currentIndexPath = indexPath
         taskVC.delegate = self
         //        }
