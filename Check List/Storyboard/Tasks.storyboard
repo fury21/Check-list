@@ -31,6 +31,9 @@
                                                 <state key="normal" title="Сортировать">
                                                     <color key="titleColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sortButton" destination="fTT-oL-yj5" eventType="touchUpInside" id="jwb-2l-D9h"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" id="6l0-c4-4Kg">
