@@ -62,11 +62,14 @@
                     <navigationItem key="navigationItem" title="Список дел" id="Mbw-zq-6lQ">
                         <barButtonItem key="leftBarButtonItem" title="Изменить" id="PG4-jT-Yqf">
                             <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="editingButtonPressed" destination="BYZ-38-t0r" id="cXc-ml-70f"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NQh-SZ-orS">
                             <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="newListButton:" destination="BYZ-38-t0r" id="hDg-zC-Vb5"/>
+                                <action selector="newListButton" destination="BYZ-38-t0r" id="F5C-6y-cpD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
