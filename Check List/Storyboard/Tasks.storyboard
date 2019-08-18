@@ -44,6 +44,9 @@
                                                 <state key="normal" title="Изменить">
                                                     <color key="titleColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="etidTable" destination="fTT-oL-yj5" eventType="touchUpInside" id="TLP-dl-pjl"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
