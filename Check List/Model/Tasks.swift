@@ -19,4 +19,5 @@ class Tasks {
         self.isTaskDone = false
         self.tasksCount = tasksCount
     }
+    
 }
