@@ -13,6 +13,10 @@ enum AlertType {
     case add
 }
 
+protocol ReloadData {
+    func reloadData()
+}
+
 class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
@@ -22,6 +26,7 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var refresh = UIRefreshControl()
     
+    var delegate: ReloadData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +51,15 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
     // кнопка edit
     @IBAction func etidTable() {
         tableView.isEditing.toggle()
+    }
+    
+    @IBAction func sortButton() {
+        showSortAlert(for: allLists[currentIndexPath.row].items)
+        allLists[currentIndexPath.row].items = sortTasks
+        tableView.reloadData()
+        
+        print(allLists[currentIndexPath.row].items)
+        print(sortTasks)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -88,6 +102,8 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         allLists[currentIndexPath.row].items[indexPath.row].isTaskDone.toggle()
         tableView.reloadData()
+        
+        delegate?.reloadData()
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -189,6 +205,7 @@ class TasksUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         present(alert, animated: true, completion: nil)
         
     }
+    
 
     
     /*
