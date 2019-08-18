@@ -54,7 +54,7 @@ class ListsUIViewController: UIViewController {
                 self.tableView.reloadData()
                 
             } else {
-                let alert = DefaultAlert.createDefaultAlert(title: "Ошибка", message: "Некорректный ввод")
+                let alert = DefaultAlert.createDefaultAlert(title: "Ошибка", message: "Введена пустая строка")
                 self.present(alert, animated: true, completion: nil)
             }
         }
