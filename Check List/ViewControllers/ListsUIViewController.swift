@@ -13,7 +13,10 @@ class ListsUIViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     @IBAction func newListButton() {
-        createAlertController(title: "Новый список", message: "Введите имя нового списка")
+        createAlertController(title: "Новый список",
+                              message: "Введите имя нового списка",
+                              actionTitle: "Добавить",
+                              type: .add)
     }
     
     @IBAction func editingButtonPressed() {
@@ -36,7 +39,8 @@ class ListsUIViewController: UIViewController {
     }
     
     //Создание алерта для добавления нового элемента
-    private func createAlertController(title: String, message: String) {
+    private func createAlertController(title: String, message: String,
+                                       actionTitle: String, type: AlertType, index: Int = 0) {
         
         let alert = UIAlertController(title: title,
                                       message: message,
@@ -45,18 +49,26 @@ class ListsUIViewController: UIViewController {
         // Добавляю текстовое поле
         alert.addTextField { (textField) in
             textField.placeholder = "Укажите название"
+            if type == .edit {
+                textField.text = allLists[index].listName
+            }
         }
         
-        let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
+        let action = UIAlertAction(title: actionTitle, style: .default) { (action) in
             if let taskNameTextField =  alert.textFields?.first?.text,
                 !taskNameTextField.isEmpty {
-                
                 let newList = AllLists(listName: taskNameTextField, items: [])
-                allLists.append(newList)
-                self.tableView.reloadData()
                 
+                switch type {
+                case .add:
+                    allLists.append(newList)
+                case .edit:
+                    allLists[index] = newList
+                }
+                
+                self.tableView.reloadData()
             } else {
-               self.showAlert(title: "Ошибка", message: "Введена пустая строка")
+                self.showAlert(title: "Ошибка", message: "Введена пустая строка")
             }
         }
         
@@ -97,6 +109,36 @@ extension ListsUIViewController: UITableViewDelegate, UITableViewDataSource {
         cell.detailTextLabel?.text = "\(allLists[indexPath.row].items.count)\\\(allLists[indexPath.row].items.filter { $0.isTaskDone == true }.count)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editing = editingAction(at: indexPath)
+        let delete = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete, editing])
+    }
+    
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "delete") { (_, action, completion) in
+            allLists.remove(at: indexPath.row)
+            self.tableView.reloadData()
+            completion(true)
+        }
+        action.image = UIImage(named: "Trash")
+        action.backgroundColor = .red
+        return action
+    }
+    
+    func editingAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "editing") { (_, action, completion) in
+            self.createAlertController(title: "Редактирование",
+                                       message: "Редактирование имени списка",
+                                       actionTitle: "Изменить",
+                                       type: .edit,
+                                       index: indexPath.row)
+        }
+        action.image = UIImage(named: "edit")
+        action.backgroundColor = .gray
+        return action
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

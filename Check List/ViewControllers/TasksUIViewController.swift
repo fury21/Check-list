@@ -103,21 +103,17 @@ class TasksUIViewController: UIViewController {
         
         // Добавляю первое текстовое поле
         alert.addTextField { (textField) in
-            switch type {
-            case .add:
-                textField.placeholder = "Укажите название"
-            case .edit:
+            textField.placeholder = "Укажите название"
+            if type == .edit {
                 textField.text = allLists[self.currentIndexPath.row].items[index].taskName
             }
         }
         
         // Добавляю второе текстовое поле
         alert.addTextField { (textField) in
-            switch type {
-            case .add:
-                textField.placeholder = "Укажите количество"
-                textField.keyboardType = .numberPad
-            case .edit:
+            textField.placeholder = "Укажите количество"
+            textField.keyboardType = .numberPad
+            if type == .edit {
                 textField.text = "\(allLists[self.currentIndexPath.row].items[index].tasksCount)"
             }
         }
