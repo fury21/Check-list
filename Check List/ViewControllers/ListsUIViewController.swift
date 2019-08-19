@@ -38,39 +38,6 @@ class ListsUIViewController: UIViewController {
         }
     }
     
-//    //Создание алерта для добавления нового элемента
-//    private func createAlertController(title: String, message: String) {
-//
-//        let alert = UIAlertController(title: title,
-//                                      message: message,
-//                                      preferredStyle: .alert)
-//
-//        // Добавляю текстовое поле
-//        alert.addTextField { (textField) in
-//            textField.placeholder = "Укажите название"
-//        }
-//
-//        let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
-//            if let taskNameTextField =  alert.textFields?.first?.text,
-//                !taskNameTextField.isEmpty {
-//
-//                let newList = AllLists(listName: taskNameTextField, items: [])
-//                allLists.append(newList)
-//                self.tableView.reloadData()
-//
-//            } else {
-//               self.showAlert(title: "Ошибка", message: "Введена пустая строка")
-//            }
-//        }
-//
-//        alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
-//        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-//        alert.addAction(action)
-//        alert.addAction(cancelAction)
-//        present(alert, animated: true, completion: nil)
-//
-//    }
-    
     //Создание алерта для добавления нового элемента
     private func createAlertController(title: String, message: String,
                                        actionTitle: String, type: AlertType, index: Int = 0) {
