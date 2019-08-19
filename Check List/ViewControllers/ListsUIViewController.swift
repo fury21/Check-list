@@ -17,7 +17,9 @@ class ListsUIViewController: UIViewController {
     }
     
     @IBAction func editingButtonPressed() {
+        if allLists.count > 0 {
         tableView.isEditing.toggle()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,8 +56,7 @@ class ListsUIViewController: UIViewController {
                 self.tableView.reloadData()
                 
             } else {
-                let alert = DefaultAlert.createDefaultAlert(title: "Ошибка", message: "Введена пустая строка")
-                self.present(alert, animated: true, completion: nil)
+               self.showAlert(title: "Ошибка", message: "Введена пустая строка")
             }
         }
         

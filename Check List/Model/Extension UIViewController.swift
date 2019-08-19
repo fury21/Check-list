@@ -43,5 +43,14 @@ extension UIViewController {
         }
         return currentStatTaskList
     }
+    
+    func showAlert(title: String, message: String)  {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(action)
+//        alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
+        present(alert, animated: true)
+    }
 }
-

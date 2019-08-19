@@ -64,32 +64,32 @@ class TasksUIViewController: UIViewController {
     @IBAction func sortButton() {
         sortByAlphabet = sortByAlphabet(by: sortTasks)
         sortExecution = executionSort(by: sortTasks)
-
+        
         showSortAlert()
-}
-        func showSortAlert() {
-            let alert = UIAlertController(title: "Сортировка",
-                                          message: "Отсортируйте ваш список",
-                                          preferredStyle: .alert)
-            alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
-            let sortByAlphabetAction = UIAlertAction(title: "По алфавиту",
-                                                     style: .default) { (_) in
-                                                        allLists[self.currentIndexPath.row].items = self.sortByAlphabet
-                                                        self.tableView.reloadData()
-            }
-            let sortByExecutionAction = UIAlertAction(title: "По выполнению",
-                                                      style: .default) { (_) in
-                                                        allLists[self.currentIndexPath.row].items = self.sortExecution
-                                                        self.tableView.reloadData()
-            }
-            
-            let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-            
-            alert.addAction(sortByAlphabetAction)
-            alert.addAction(sortByExecutionAction)
-            alert.addAction(cancelAction)
-            present(alert, animated: true, completion: nil)
+    }
+    func showSortAlert() {
+        let alert = UIAlertController(title: "Сортировка",
+                                      message: "Отсортируйте ваш список",
+                                      preferredStyle: .alert)
+        alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
+        let sortByAlphabetAction = UIAlertAction(title: "По алфавиту",
+                                                 style: .default) { (_) in
+                                                    allLists[self.currentIndexPath.row].items = self.sortByAlphabet
+                                                    self.tableView.reloadData()
         }
+        let sortByExecutionAction = UIAlertAction(title: "По выполнению",
+                                                  style: .default) { (_) in
+                                                    allLists[self.currentIndexPath.row].items = self.sortExecution
+                                                    self.tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alert.addAction(sortByAlphabetAction)
+        alert.addAction(sortByExecutionAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
     
     //action refresh таблицы, сбрасывает все выбранные элементы
     @objc private func handleRefresh() {
@@ -129,7 +129,7 @@ class TasksUIViewController: UIViewController {
                 textField.placeholder = "Укажите количество"
                 textField.keyboardType = .numberPad
             case .edit:
-                textField.text = String(allLists[self.currentIndexPath.row].items[index].tasksCount)
+                textField.text = "\(allLists[self.currentIndexPath.row].items[index].tasksCount)"
             }
         }
         
@@ -147,9 +147,7 @@ class TasksUIViewController: UIViewController {
                 }
                 self.tableView.reloadData()
             } else {
-                let alert = DefaultAlert.createDefaultAlert(title: "Ошибка", message: "Некорректный ввод")
-                alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
-                self.present(alert, animated: true, completion: nil)
+                self.showAlert(title: "Ошибка", message: "Некорректный ввод")
             }
         }
         
@@ -192,7 +190,7 @@ extension TasksUIViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.attributedText = allLists[currentIndexPath.row].items[indexPath.row].taskName.cancelStrikeThrough()
             cell.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
-        cell.detailTextLabel?.text = "Количество: \(allLists[currentIndexPath.row].items[indexPath.row].tasksCount)"
+        cell.detailTextLabel?.text = "\(allLists[currentIndexPath.row].items[indexPath.row].tasksCount)"
         
         sortTasks = allLists[currentIndexPath.row].items
         return cell

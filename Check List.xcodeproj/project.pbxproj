@@ -20,7 +20,6 @@
 		38FDBA802307066B00EEAB75 /* Lists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FDBA7F2307066B00EEAB75 /* Lists.storyboard */; };
 		38FDBA892308A12C00EEAB75 /* TasksUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FDBA882308A12C00EEAB75 /* TasksUIViewController.swift */; };
 		77CFA4C22308372F00C18DD8 /* Extension UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CFA4C12308372F00C18DD8 /* Extension UIViewController.swift */; };
-		F69F943B23083B9A000CC735 /* DefaultAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F943A23083B9A000CC735 /* DefaultAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		38FDBA7F2307066B00EEAB75 /* Lists.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lists.storyboard; sourceTree = "<group>"; };
 		38FDBA882308A12C00EEAB75 /* TasksUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksUIViewController.swift; sourceTree = "<group>"; };
 		77CFA4C12308372F00C18DD8 /* Extension UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIViewController.swift"; sourceTree = "<group>"; };
-		F69F943A23083B9A000CC735 /* DefaultAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +95,6 @@
 				380FCEDE2305566C0042B62E /* AppDelegate.swift */,
 				38FDBA7B230705C100EEAB75 /* AllLists.swift */,
 				38FDBA7D230705E300EEAB75 /* Tasks.swift */,
-				F69F943A23083B9A000CC735 /* DefaultAlert.swift */,
 				382CCA1D2306C1CC0077BC2A /* Extension String.swift */,
 				77CFA4C12308372F00C18DD8 /* Extension UIViewController.swift */,
 			);
@@ -188,7 +185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F69F943B23083B9A000CC735 /* DefaultAlert.swift in Sources */,
 				382CCA1A2306C18B0077BC2A /* TaskTableViewCell.swift in Sources */,
 				38FDBA7E230705E300EEAB75 /* Tasks.swift in Sources */,
 				38FDBA892308A12C00EEAB75 /* TasksUIViewController.swift in Sources */,
