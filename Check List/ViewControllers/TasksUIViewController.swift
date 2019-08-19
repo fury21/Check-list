@@ -174,12 +174,15 @@ extension TasksUIViewController: UITableViewDelegate, UITableViewDataSource {
         
         if currentState == true {
             cell.textLabel?.attributedText = allLists[currentIndexPath.row].items[indexPath.row].taskName.strikeThrough()
+            cell.detailTextLabel?.text = "\(allLists[currentIndexPath.row].items[indexPath.row].tasksCount)"
             cell.backgroundColor = #colorLiteral(red: 0.6940407753, green: 0.6941619515, blue: 0.6940331459, alpha: 1)
         } else {
             cell.textLabel?.attributedText = allLists[currentIndexPath.row].items[indexPath.row].taskName.cancelStrikeThrough()
+            cell.detailTextLabel?.text = "\(allLists[currentIndexPath.row].items[indexPath.row].tasksCount)"
+            
             cell.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
-        cell.detailTextLabel?.text = "\(allLists[currentIndexPath.row].items[indexPath.row].tasksCount)"
+        
         
         return cell
     }
