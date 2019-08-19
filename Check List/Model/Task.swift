@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Tasks {
+class Task {
     
     let taskName: String
     var isTaskDone = false

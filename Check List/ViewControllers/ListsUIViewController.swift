@@ -60,7 +60,7 @@ class ListsUIViewController: UIViewController {
         let action = UIAlertAction(title: actionTitle, style: .default) { (action) in
             if let taskNameTextField =  alert.textFields?.first?.text,
                 !taskNameTextField.isEmpty {
-                let newList = AllLists(listName: taskNameTextField, items: [])
+                let newList = List(listName: taskNameTextField, items: [])
                 
                 switch type {
                 case .add:

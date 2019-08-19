@@ -125,7 +125,7 @@ class TasksUIViewController: UIViewController {
                 !taskNameTextField.isEmpty, let taskCountTextField = alert.textFields?[1].text,
                 let taskCount = Int(taskCountTextField) {
                 
-                let newTaskList = Tasks(taskName: taskNameTextField, tasksCount: taskCount)
+                let newTaskList = Task(taskName: taskNameTextField, tasksCount: taskCount)
                 switch type {
                 case .add:
                     allLists[self.currentIndexPath.row].items.append(newTaskList)

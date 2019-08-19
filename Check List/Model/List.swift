@@ -8,23 +8,17 @@
 
 import Foundation
 
-class AllLists {
+class List {
     
-    var listName: String
-    var items: [Tasks]
+    let listName: String
+    var items: [Task]
     var isListDone = false
-    static var itemsCout = 0
     
-    init(listName: String, items: [Tasks]) {
+    init(listName: String, items: [Task]) {
         self.listName = listName
         self.items = items
         self.isListDone = false
-        AllLists.itemsCout += 1
-    }
-    
-    deinit {
-        AllLists.itemsCout -= 1
     }
 }
 
-var allLists = [AllLists]()
+var allLists = [List]()

@@ -19,7 +19,7 @@ extension UIViewController {
         allLists[indexPath.row].items.sort(by: { !$0.isTaskDone && $1.isTaskDone })
     }
     
-    func executionCheck(for tasks: [Tasks]) -> Bool {
+    func executionCheck(for tasks: [Task]) -> Bool {
         var execution: [Bool] = []
         var currentStatTaskList = false
         for task in tasks {
