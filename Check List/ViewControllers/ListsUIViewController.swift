@@ -8,27 +8,68 @@
 
 import UIKit
 
-class ListsUIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListsUIViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    @IBAction func newListButton(_ sender: Any) {
-        allLists.append(AllLists(listName: "Новый список", items: []))
-        tableView.reloadData()
+    @IBAction func newListButton() {
+        createAlertController(title: "Добавление", message: "Введите новое событие")
     }
     
+    @IBAction func editingButtonPressed() {
+        tableView.isEditing.toggle()
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tableView.reloadData()
     }
     
-    // MARK: - Table view data source
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let taskVC = segue.destination as! TasksUIViewController
+            
+            taskVC.currentIndexPath = indexPath
+        }
+    }
+    
+    //Создание алерта для добавления нового элемента
+    private func createAlertController(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        // Добавляю текстовое поле
+        alert.addTextField { (textField) in
+            textField.placeholder = "Укажите название"
+        }
+        
+        let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
+            if let taskNameTextField =  alert.textFields?.first?.text,
+                !taskNameTextField.isEmpty {
+                
+                let newList = AllLists(listName: taskNameTextField, items: [])
+                allLists.append(newList)
+                self.tableView.reloadData()
+                
+            } else {
+                let alert = DefaultAlert.createDefaultAlert(title: "Ошибка", message: "Введена пустая строка")
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        alert.addAction(action)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+}
+
+extension ListsUIViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -52,13 +93,19 @@ class ListsUIViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         return cell
-    }    
+    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = tableView.indexPathForSelectedRow {
-            let taskVC = segue.destination as! TasksUIViewController
-            
-            taskVC.currentIndexPath = indexPath
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let currentTask = allLists.remove(at: sourceIndexPath.row)
+        allLists.insert(currentTask, at: destinationIndexPath.row)
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            allLists.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
         }
     }
+    
 }
