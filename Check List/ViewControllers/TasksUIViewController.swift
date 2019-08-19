@@ -14,7 +14,6 @@ enum AlertType {
     case add
 }
 
-
 class TasksUIViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
@@ -31,13 +30,16 @@ class TasksUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let barBtnVar = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButton))
+        let barBtnVar = UIBarButtonItem(barButtonSystemItem: .add,
+                                        target: self,
+                                        action: #selector(addButton))
         navigationItem.setRightBarButton(barBtnVar, animated: true)
         navigationItem.title = allLists[currentIndexPath.row].listName
         
-        refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        refresh.addTarget(self,
+                          action: #selector(handleRefresh),
+                          for: .valueChanged)
         tableView.addSubview(refresh)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
