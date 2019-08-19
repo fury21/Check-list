@@ -111,11 +111,9 @@ class TasksUIViewController: UIViewController {
         
         // Добавляю второе текстовое поле
         alert.addTextField { (textField) in
-            switch type {
-            case .add:
-                textField.placeholder = "Укажите количество"
-                textField.keyboardType = .numberPad
-            case .edit:
+            textField.placeholder = "Укажите количество"
+            textField.keyboardType = .numberPad
+            if type == .edit {
                 textField.text = "\(allLists[self.currentIndexPath.row].items[index].tasksCount)"
             }
         }
