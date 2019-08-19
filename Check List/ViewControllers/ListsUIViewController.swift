@@ -13,7 +13,7 @@ class ListsUIViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     @IBAction func newListButton() {
-        createAlertController(title: "Добавление", message: "Введите новое событие")
+        createAlertController(title: "Новый список", message: "Введите имя нового списка")
     }
     
     @IBAction func editingButtonPressed() {
