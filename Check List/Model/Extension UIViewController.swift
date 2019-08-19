@@ -31,13 +31,15 @@ extension UIViewController {
     }
     
     func executionCheck(for tasks: [Tasks]) -> Bool {
+        var execution: [Bool] = []
         var currentStatTaskList = false
         for task in tasks {
-            if task.isTaskDone == true {
-                currentStatTaskList = true
-            } else {
-                currentStatTaskList = false
+            if task.isTaskDone == false {
+                execution.append(false)
             }
+        }
+        if execution.isEmpty {
+            currentStatTaskList = true
         }
         return currentStatTaskList
     }

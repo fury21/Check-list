@@ -21,6 +21,10 @@ class AllLists {
         self.isListDone = false
         AllLists.itemsCout += 1
     }
+    
+    deinit {
+        AllLists.itemsCout -= 1
+    }
 }
 
 var allLists = [AllLists]()

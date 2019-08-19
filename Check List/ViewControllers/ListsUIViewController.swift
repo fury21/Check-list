@@ -92,6 +92,8 @@ extension ListsUIViewController: UITableViewDelegate, UITableViewDataSource {
             cell.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
         
+        cell.detailTextLabel?.text = String(allLists[indexPath.row].items.count)
+        
         return cell
     }
     
