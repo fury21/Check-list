@@ -40,7 +40,9 @@ class TasksUIViewController: UIViewController {
     
     // кнопка edit
     @IBAction func editTable() {
-        tableView.isEditing.toggle()
+        if allLists.count > 0 {
+            tableView.isEditing.toggle()
+        }
     }
     
     

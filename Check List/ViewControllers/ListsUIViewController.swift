@@ -39,8 +39,11 @@ class ListsUIViewController: UIViewController {
     }
     
     //Создание алерта для добавления нового элемента
-    private func createAlertController(title: String, message: String,
-                                       actionTitle: String, type: AlertType, index: Int = 0) {
+    private func createAlertController(title: String,
+                                       message: String,
+                                       actionTitle: String,
+                                       type: AlertType,
+                                       index: Int = 0) {
         
         let alert = UIAlertController(title: title,
                                       message: message,
