@@ -22,11 +22,6 @@ class TasksUIViewController: UIViewController {
     var currentIndexPath: IndexPath!
     var refresh = UIRefreshControl()
     
-    var sortTasks: [Tasks] = []
-    var sortByAlphabet: [Tasks] = []
-    var sortExecution: [Tasks] = []
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,9 +37,15 @@ class TasksUIViewController: UIViewController {
         tableView.addSubview(refresh)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        tableView.reloadData()
+    
+    // кнопка edit
+    @IBAction func editTable() {
+        tableView.isEditing.toggle()
+    }
+    
+    
+    @IBAction func sortButton() {
+        showSortAlert()
     }
     
     // MARK: - Table view data source
@@ -55,18 +56,6 @@ class TasksUIViewController: UIViewController {
                               type: .add)
     }
     
-    // кнопка edit
-    @IBAction func editTable() {
-        tableView.isEditing.toggle()
-    }
-    
-    
-    @IBAction func sortButton() {
-        sortByAlphabet = sortByAlphabet(by: sortTasks)
-        sortExecution = executionSort(by: sortTasks)
-        
-        showSortAlert()
-    }
     func showSortAlert() {
         let alert = UIAlertController(title: "Сортировка",
                                       message: "Отсортируйте ваш список",
@@ -74,12 +63,12 @@ class TasksUIViewController: UIViewController {
         alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
         let sortByAlphabetAction = UIAlertAction(title: "По алфавиту",
                                                  style: .default) { (_) in
-                                                    allLists[self.currentIndexPath.row].items = self.sortByAlphabet
+                                                    self.sortByAlphabet(indexPath: self.currentIndexPath)
                                                     self.tableView.reloadData()
         }
         let sortByExecutionAction = UIAlertAction(title: "По выполнению",
                                                   style: .default) { (_) in
-                                                    allLists[self.currentIndexPath.row].items = self.sortExecution
+                                                    self.sortByDone(indexPath: self.currentIndexPath)
                                                     self.tableView.reloadData()
         }
         
@@ -192,7 +181,6 @@ extension TasksUIViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.detailTextLabel?.text = "\(allLists[currentIndexPath.row].items[indexPath.row].tasksCount)"
         
-        sortTasks = allLists[currentIndexPath.row].items
         return cell
     }
     
@@ -211,8 +199,6 @@ extension TasksUIViewController: UITableViewDelegate, UITableViewDataSource {
         
         allLists[currentIndexPath.row].items[indexPath.row].isTaskDone.toggle()
         tableView.reloadData()
-        
-        sortTasks = allLists[currentIndexPath.row].items
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

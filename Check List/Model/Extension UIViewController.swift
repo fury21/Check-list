@@ -8,26 +8,15 @@
 
 import UIKit
 
-//var sortTasks: [Tasks] = []
-
-enum KindOfSort {
-    case alphabet
-    case execution
-}
-
-var kindOfSort = KindOfSort.alphabet
-
 extension UIViewController {
     
     
-    func sortByAlphabet(by tasks: [Tasks]) -> [Tasks] {
-        let sortedTasks = tasks.sorted(by: {$0.taskName < $1.taskName})
-        return sortedTasks
+    func sortByAlphabet(indexPath: IndexPath) {
+        allLists[indexPath.row].items.sort(by: {$0.taskName < $1.taskName})
     }
     
-    func executionSort(by tasks: [Tasks]) -> [Tasks] {
-        let tasks = tasks.sorted(by: { !$0.isTaskDone && $1.isTaskDone })
-        return tasks
+    func sortByDone(indexPath: IndexPath) {
+        allLists[indexPath.row].items.sort(by: { !$0.isTaskDone && $1.isTaskDone })
     }
     
     func executionCheck(for tasks: [Tasks]) -> Bool {
@@ -50,7 +39,7 @@ extension UIViewController {
                                       preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(action)
-//        alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
+        alert.view.tintColor = #colorLiteral(red: 1, green: 0.8196527362, blue: 0.4653458595, alpha: 1)
         present(alert, animated: true)
     }
 }
