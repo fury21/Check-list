@@ -103,10 +103,8 @@ class TasksUIViewController: UIViewController {
         
         // Добавляю первое текстовое поле
         alert.addTextField { (textField) in
-            switch type {
-            case .add:
-                textField.placeholder = "Укажите название"
-            case .edit:
+            textField.placeholder = "Укажите название"
+            if type == .edit {
                 textField.text = allLists[self.currentIndexPath.row].items[index].taskName
             }
         }
